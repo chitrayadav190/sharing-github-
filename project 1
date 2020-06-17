@@ -1,1 +1,53 @@
+stock = {'Beer':5, 'Vodka':3, 'Wine':0}
+alreadydrunk = ['Deepu']
+
+
+def menu():
+    print("press 1:To add stock. ")
+    print("press 2: To check stock.")
+    print("press 3: To enter purchase.")
+    print("press q: To quit the progam.")
+    return input("What would like to do?")
+
+run = menu()
+
+while True:
+    if run == '1':
+        addstock = input('drink to be added to stock?')
+        amount = int(input('Quanity of drink to be added stock?'))
+        stock[addstock] = amount
+        run = menu()
+        
+        
+    elif run == '2':
+        for key, value in stock.items():
+            print("{}: {}".format(key,valuse))
+        run = menu()
+        
+    elif run == '3':
+
+        if drink in stock:
+            if person in alreadydrunk:
+                print('{} was sent to the brig'.format(person))
+                run = menu()
+            else:
+                if stock[drink] > 0:
+                    stock[drink] -= 1
+                    alreadydrink.append(person)
+                    print("{} drunk {}". format(person, drink))
+                    run = menu()
+
+                else:
+                    print('{} did not drunk because we are not of {}'. format(person,drink))
+                    run = menu()
+
+            
+             else:
+                print('{} is out of stock'. format(Drink))
+                run = menu()
+        
+        elif run == 'q':
+            break
+
+print("The program has ended")
 
